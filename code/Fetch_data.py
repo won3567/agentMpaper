@@ -513,7 +513,7 @@ class PubMedClient(BiomedicalDatabaseClient):
         api_key, email = next(self.account_cycle)
         params['api_key'] = api_key
         params['email'] = email
-        if not self.api_key or not self.email:
+        if not params['api_key'] or not params['email']:
             logger.error("PubMed API key or email is not set.")
         for attempt in range(3):
             try:
