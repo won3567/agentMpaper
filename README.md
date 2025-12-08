@@ -1,8 +1,7 @@
 <h1 align="center">agent Medical Paper Analyst</h1>
 
 ### Web link
-Try with your OpenAI API key:
-https://dlbb-w-agentmedical-visualization-en-vzlhnq.streamlit.app/
+https://agentmpaper.streamlit.app/ (Try with your OpenAI API key)
 
 ![Workflow](picture/Workflow.png)
 

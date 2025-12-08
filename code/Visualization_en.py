@@ -1,6 +1,6 @@
 import streamlit as st
 import plotly.express as px
-from PIL import Image
+import PIL
 import pandas as pd
 import numpy as np
 from Orchestrator import ResearchAnalyzer
@@ -465,7 +465,7 @@ def main():
         # ---------- Section 1: Workflow ----------
         current_dir = os.path.dirname(__file__) 
         image_path = os.path.join(current_dir, "Workflow.png")
-        image = Image.open(image_path)
+        image = PIL.Image.open(image_path)
         st.image(image, caption="Smart Analyst Workflow", width="stretch")
 
         # ---------- Section 2: User Scenarios (Two Columns) ----------
