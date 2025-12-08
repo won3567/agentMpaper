@@ -203,18 +203,19 @@ class PubMedClient(BiomedicalDatabaseClient):
     
     BASE_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
     
-    def __init__(self, api_key: Optional[str] = None, email: Optional[str] = None):
+    def __init__(self, api_key: Optional[str] = None, email: Optional[str] = None, api_accounts: Optional[List[Tuple[str, str]]] = None):
         """
         Initialize PubMed client
         
         Args:
             api_key: NCBI API key (recommended for higher rate limits)
             email: Email address (required by NCBI guidelines)
+            api_accounts: List of tuples of (API key, email)
         """
         self.api_key = os.getenv('NCBI_API_KEY') if api_key is None else api_key
         self.email = os.getenv('NCBI_EMAIL') if email is None else email
-        self.api_accounts = list(zip(os.getenv("NCBI_API_KEYS", "").split(","), 
-                                     os.getenv("NCBI_EMAILS", "").split(",")))
+        self.api_accounts = api_accounts if api_accounts is not None else list(zip(os.getenv("NCBI_API_KEYS", "").split(","), 
+                                                                                os.getenv("NCBI_EMAILS", "").split(",")))
         self.account_cycle = cycle(self.api_accounts)
         self.session = requests.Session()
         
@@ -512,6 +513,8 @@ class PubMedClient(BiomedicalDatabaseClient):
         api_key, email = next(self.account_cycle)
         params['api_key'] = api_key
         params['email'] = email
+        if not self.api_key or not self.email:
+            logger.error("PubMed API key or email is not set.")
         for attempt in range(3):
             try:
                 async with semaphore:
