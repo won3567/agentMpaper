@@ -1,11 +1,5 @@
 <h1 align="center">agent Medical Paper Analyst</h1>
 
-### Web link
-https://agentmpaper.streamlit.app/ (Try with your OpenAI API key)
-
-![Workflow](picture/Workflow.png)
-
-
 
 ### Workflow
 1.LLM generates professional medical terminology to search on PubMed
@@ -20,6 +14,11 @@ https://agentmpaper.streamlit.app/ (Try with your OpenAI API key)
 ![search parameters](picture/report.png)
 
 
-
 ### Video display
 https://youtu.be/-qSq3hbOkmQ
+
+
+### Web link
+https://agentmpaper.streamlit.app/ (Try with your API for OpenAI and PubMed)
+
+![Workflow](picture/Workflow.png)

@@ -147,7 +147,7 @@ def main():
         st.info(f"Recommended queries:  \n{example_queries['Medical Evidence-based Study']}")
 
         API_key = st.text_area("🔑 Input Your API key", height=40)
-        Model = st.selectbox("🧠 Choose Model", ["gpt-5", "gpt-5-mini", "gpt-4.1-mini", "gpt-4o-mini", "gpt-3.5-turbo"], index=3)
+        Model = st.selectbox("🧠 Choose Model", ["gpt-5.2", "gpt-5-mini", "gpt-4.1-mini", "gpt-4o-mini", "gemini-3-flash-preview"], index=3)
         LLMor = st.checkbox("OpenRouter", key=f"OpenRouter")
         PubMed_API_accounts = st.text_area("🔑 Input Your PubMed API accounts", height=40)
         PubMed_API_accounts = [tuple(account.split(":")) for account in PubMed_API_accounts.split("\n")] if PubMed_API_accounts else None
