@@ -15,7 +15,8 @@
 
 
 ### Video display
-https://youtu.be/-qSq3hbOkmQ
+[YouTube](https://youtu.be/-qSq3hbOkmQ)
+[bilibili](https://www.bilibili.com/video/BV1xqziB3Ex4/?vd_source=d0fa9cc20429329c68e1272c0c67189e)
 
 
 ### Web link
